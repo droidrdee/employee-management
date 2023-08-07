@@ -3,9 +3,10 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.index),
-    path('list', views.listEmployee),
-    path('add',views.addEmployee),
-    path('delete', views.removeEmployee),
-    path('search', views.searchEmployee),
+    path('', views.index, name='index'),
+    path('list/', views.listEmployee, name='list'),
+    path('add/',views.addEmployee, name='add'),
+    path('remove/', views.removeEmployee, name='remove'),
+    path('remove/<int:emp_id>', views.removeEmployee, name='remove'),
+   
 ]

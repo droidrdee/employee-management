@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+        <h2>All Employee List</h2>
+        <hr>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name </th>
+                <th scope="col">Last Name </th>
+                <th scope="col">Department</th>
+                <th scope="col">Loaction</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Role</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Joining Date</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for emps in emp %}
+            <tr>
+                <th scope="row">{{ emps.id}}</th>
+                <td>{{emps.first_name}}</td>
+                <td>{{emps.last_name}}</td>
+                <td>{{emps.dept.name}}</td>
+                <td>{{emps.dept.location}}</td>
+                <td>{{emps.salary}}</td>
+                <td>{{emps.role.name}}</td>
+                <td>{{emps.phone}}</td>
+                <td>{{emps.join_date}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+{% endblock %}
